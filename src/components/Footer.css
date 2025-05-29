@@ -1,0 +1,26 @@
+.footer-sec{
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    height: 80vh;
+}
+
+.footer-sec::before,
+.footer-sec::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: -1;
+}
+
+.footer-sec::before {
+  left: 0;
+  background-color: #faf2e6; /* Left side background */
+}
+
+.footer-sec::after {
+  right: 0;
+  background-color: #f9fdfe; /* Right side background */
+}

@@ -1,0 +1,7 @@
+.our-sec{
+    position: relative;
+    height: 60vh;
+    background-image: url(../assets/Ourhotel-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
