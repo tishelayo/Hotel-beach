@@ -1,7 +1,172 @@
-.our-sec{
-    position: relative;
-    height: 60vh;
-    background-image: url(../assets/Ourhotel-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
+.our-sect {
+  background-image: url(../assets/Ourhotel-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: 10.5rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+
+.sec-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(0, 0, 0) 100%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sec-text {
+  font-family: "Zodiak", "Zodiak Placeholder", serif;
+  color: white;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.33em;
+  position: relative;
+  margin-left: 2rem;
+  z-index: 3;
+}
+
+/* dont touch or work here at all */
+.content {
+  background-color: #f9fdfe;
+  padding: 160px 40px;
+  position: relative;
+  z-index: 999;
+  margin-top: 0;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.content-1 {
+  font-family: "Zodiak", "Zodiak Placeholder", serif;
+  font-size: 25px;
+  font-weight: 300;
+  color: #a4a4a4;
+  width: 100%;
+  max-width: 600px;
+}
+
+.butt {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.spa {
+  color: black;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center;
+  gap: 4rem;
+  color: #222;
+  font-weight: 500;
+  margin-top: 3rem;
+  padding: 0rem 0rem 0rem 1.5rem;
+  transition: background 0.2s;
+  border: rgb(139, 107, 48) 1px solid;
+  border-radius: 100px;
+  width: 300px;
+}
+
+.link-1 p {
+  color: rgb(139, 107, 48);
+  font-size: 1rem;
+}
+
+.link-2 i {
+  color: white;
+  padding: 1.3rem 1.3rem;
+  border-radius: 100px;
+  rotate: 320deg;
+  font-size: 20px;
+  background-color: rgb(139, 107, 48);
+}
+
+.story {
+  width: 100%;
+  max-width: 1640px;
+  background-color: #FAF2E6;
+  padding: 7rem 40px;
+  position: relative;
+  z-index: 999;
+  margin-top: 0;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.story-1 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1 0 0px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 80px;
+  height: min-content;
+  justify-content: center;
+  overflow: visible;
+  padding: 0;
+  width: 1px;
+  position: relative;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 40rem;
+  object-position: center center;
+  object-fit: cover;
+}
+
+.context {
+  align-items: flex-start;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 40px;
+  height: min-content;
+  justify-content: center;
+  max-width: 600px;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.context h1{
+  font-size: 40px;
+  font-family: "Zodiak", "Zodiak Placeholder", serif;
+  line-height: 1.3em;
+}
+
+.context p {
+  font-family: "Hedvig Letters Sans", "Hedvig Letters Sans Placeholder",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5rem;
+  text-align: start;
+}
+

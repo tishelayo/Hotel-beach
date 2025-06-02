@@ -9,7 +9,7 @@ function Nav() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      setScrolled(scrollPosition > 500); // Change color after scrolling 50px
+      setScrolled(scrollPosition > 350); // Change color after scrolling 50px
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,8 +28,7 @@ function Nav() {
       </a> */}
       <nav className="nav">
         <Link to="/OurHotel">Our Hotel</Link>
-        {/* <a href="#our-hotel">Our Hotel</a> */}
-        <a href="#rooms">Rooms</a>
+        <Link to="/RoomsPage">Rooms</Link>
         <a href="#restaurant">Restaurant</a>
         <a href="#event">Event</a>
         <a href="#service">Services</a>
@@ -45,11 +44,9 @@ function Nav() {
       </div>
       {menuOpen && (
         <div className="mobile-menu">
-          <a href="#home" className="hotel-name">
-            HotelBeach
-          </a>
-          <a href="#our-hotel">Our Hotel</a>
-          <a href="#rooms">Rooms</a>
+          <Link to="/" className="hotel-name" >HotelBeach</Link>
+          <Link to="/OurHotel">Our Hotel</Link>
+          <Link to="/RoomsPage">Rooms</Link>
           <a href="#restaurant">Restaurant</a>
           <a href="#event">Event</a>
           <a href="#service">Service</a>

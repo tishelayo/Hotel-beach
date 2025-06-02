@@ -1,11 +1,22 @@
 import "./SpecialAct.css";
+// motion
+import { motion } from "framer-motion";
+// variants
+import { fadeIn } from "../variants";
+
 import special1 from "../assets/special-1.jpg";
 import special2 from "../assets/special-2.jpg";
 
 function SpecialAct() {
   return (
     <section className="specialact-hero">
-      <div className="specialact-content">
+      <motion.div
+        variants={fadeIn("up", 0.9)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="specialact-content"
+      >
         <h1 className="specialact-heading">
           Special Activities
           <br />
@@ -17,11 +28,24 @@ function SpecialAct() {
           and comfort awaits your arrival.
         </p>
         <button className="specialact-cta">Learn More</button>
-      </div>
-      <div className="specialact-img-bg">
-        <img src={special2} alt="background" className="img-bg" />
+      </motion.div>
+      <motion.div
+        variants={fadeIn("left", 0.1)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="specialact-img-bg"
+      >
+        <motion.div
+          variants={fadeIn("left", 0.1)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+        >
+          <img src={special2} alt="background" className="img-bg" />
+        </motion.div>
         <img src={special1} alt="foreground" className="img-foreground" />
-      </div>
+      </motion.div>
     </section>
   );
 }
