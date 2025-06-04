@@ -111,8 +111,8 @@
   z-index: 999;
 }
 
-.mobile-menu .hotel-name{
-    color: white !important;
+.mobile-menu .hotel-name {
+  color: white !important;
 }
 
 .mobile-menu a {
@@ -155,7 +155,15 @@
 }
 
 @media (max-width: 991px) {
-    .header {
-        padding: 1.3rem 1.5rem;;
-    }
+   .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
 }

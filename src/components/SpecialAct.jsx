@@ -11,7 +11,7 @@ function SpecialAct() {
   return (
     <section className="specialact-hero">
       <motion.div
-        variants={fadeIn("up", 0.9)}
+        variants={fadeIn("up", 0.2)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
@@ -29,23 +29,11 @@ function SpecialAct() {
         </p>
         <button className="specialact-cta">Learn More</button>
       </motion.div>
-      <motion.div
-        variants={fadeIn("left", 0.1)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-        className="specialact-img-bg"
-      >
-        <motion.div
-          variants={fadeIn("left", 0.1)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-        >
-          <img src={special2} alt="background" className="img-bg" />
-        </motion.div>
+      <div className="specialact-img-bg">
+        <img src={special2} alt="background" className="img-bg" />
+
         <img src={special1} alt="foreground" className="img-foreground" />
-      </motion.div>
+      </div>
     </section>
   );
 }

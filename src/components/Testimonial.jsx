@@ -27,7 +27,7 @@ function Testimonial() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonialsData.length);
-    }, 20000); // 20 seconds
+    }, 15000); // 20 seconds
     return () => clearInterval(interval);
   }, []);
 

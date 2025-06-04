@@ -1,53 +1,57 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import { useState } from "react";
 import "./OurHotel.css";
 import image from "../assets/ourpageimg-1.jpg";
 import imagee from "../assets/ourpageimg-2.jpg";
 
-// const AccordionItem = ({ title, content }) => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggleAccordion = () => setIsOpen(!isOpen);
-
-//   return (
-//     <div className="accord">
-//       <div className="accordion-item">
-//         <div onClick={toggleAccordion} className="accordion-title">
-//           <h3>{title}</h3>
-//           <span>{isOpen ? "-" : "+"}</span>
-//         </div>
-//         {isOpen && <div className="accordion-content">{content}</div>}
-//       </div>
-      
-//     </div>
-//   );
-// };
-
-// const Accordion = () => {
-//   const data = [
-//     {
-//       title: "How can I make a reservation at your hotel?",
-//       content: "You can make a reservation directly through our website or by contacting our reservations team via phone or email. We also accept bookings through third-party booking platforms."
-//     },
-//     {
-//       title: "What is your cancellation policy?",
-//       content: "Our cancellation policy varies depending on the type of reservation and the rate selected. Please refer to your booking confirmation or contact our reservations team for more information.",
-//     },
-//     {
-//       title: "What amenities are included with my stay?",
-//       content: "Our hotel offers a range of amenities, including complimentary Wi-Fi, access to our fitness center, concierge services, and daily housekeeping.",
-//     },
-//   ];
-
-//   return (
-//     <div className="accordion">
-//       {data.map((item, index) => (
-//         <AccordionItem key={index} title={item.title} content={item.content} />
-//       ))}
-//     </div>
-//   );
-// };
+const data = [
+  {
+    title: "How can I make a reservation at your hotel?",
+    content:
+      "You can make a reservation directly through our website or by contacting our reservations team via phone or email. We also accept bookings through third-party booking platforms.",
+  },
+  {
+    title: "What is your cancellation policy?",
+    content:
+      "Our cancellation policy varies depending on the type of reservation and the rate selected. Please refer to your booking confirmation or contact our reservations team for more information.",
+  },
+  {
+    title: "What amenities are included with my stay?",
+    content:
+      "Our hotel offers a range of amenities, including complimentary Wi-Fi, access to our fitness center, concierge services, and daily housekeeping.",
+  },
+  {
+    title: "Do you offer room service?",
+    content:
+      "Yes, we offer 24/7 room service for your convenience. Our menu is available in your room.",
+  },
+  {
+    title: "What types of rooms do you offer?",
+    content:
+      "We offer a variety of rooms including standard, deluxe, suites, and penthouses to suit your needs.",
+  },
+  {
+    title: "Do you offer smoking or non-smoking rooms?",
+    content:
+      "We offer both smoking and non-smoking rooms. Please specify your preference when booking.",
+  },
+];
 
 function OurHotel() {
+  const [selected, setSelected] = useState(null);
+
+  const toggle = (i) => {
+    if (selected === i) {
+      return setSelected(null);
+    }
+    setSelected(i);
+  };
+
+  // Split data into two columns
+  const mid = Math.ceil(data.length / 2);
+  const leftColumn = data.slice(0, mid);
+  const rightColumn = data.slice(mid);
+
   return (
     <section>
       <div className="our-sect">
@@ -94,7 +98,7 @@ function OurHotel() {
           </div>
           <img src={image} alt="image-1" className="img" />
         </div>
-        <div className="story-1">
+        <div className="story-2">
           <img src={imagee} alt="image-2" className="img" />
           <div className="context">
             <h1>Our Vision</h1>
@@ -110,7 +114,43 @@ function OurHotel() {
       </div>
 
       {/* accordion section */}
-      {/* <Accordion /> */}
+      <div className="accord-1">
+        <h2 className="faq-title">Frequently Asked Questions</h2>
+        <div className="faq-columns">
+          <div className="faq-col">
+            {leftColumn.map((item, i) => (
+              <div className="item" key={i}>
+                <div className="title" onClick={() => toggle(i)}>
+                  <h2>{item.title}</h2>
+                  <span className="arrow-icon">&#x25BC;</span>
+                </div>
+                <div
+                  className={selected === i ? "faq-answer show" : "faq-answer"}
+                >
+                  {item.content}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="faq-col">
+            {rightColumn.map((item, i) => (
+              <div className="item" key={i + mid}>
+                <div className="title" onClick={() => toggle(i + mid)}>
+                  <h2>{item.title}</h2>
+                  <span className="arrow-icon">&#x25BC;</span>
+                </div>
+                <div
+                  className={
+                    selected === i + mid ? "faq-answer show" : "faq-answer"
+                  }
+                >
+                  {item.content}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

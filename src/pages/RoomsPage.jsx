@@ -22,7 +22,7 @@ function RoomsPage() {
       </div>
       <div className="content">
         <div className="rooms">
-            {[...roomData, ...roomData].map((room, idx) => (
+            {roomData.map((room, idx) => (
           <div className="room-caro" key={idx}>
             <a href="#" className="image1">
               <img src={room.img} alt={room.label} className="room-img" />
@@ -34,7 +34,7 @@ function RoomsPage() {
                     <span>{room.person}</span>
                   </div>
                 </div>
-                <div className="room-hover">
+                <div className="room-hover1">
                   <p>
                     {room.description}
                   </p>

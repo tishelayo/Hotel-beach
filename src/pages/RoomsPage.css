@@ -40,7 +40,6 @@
 
 .content {
   background-color: #f9fdfe;
-  /* padding: 50px 40px; */
   position: relative;
   z-index: 999;
   margin-top: 0;
@@ -54,8 +53,9 @@
 
 .rooms {
   display: grid;
-  grid-template-columns: 1fr 1fr  ;
-  gap: 3rem;
+  grid-auto-rows: minmax(0px, 1fr);
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
+  gap: 2rem;
 }
 
 .room-caro {
@@ -122,7 +122,7 @@
   font-size: 1.3rem;
 }
 
-.room-hover {
+.room-hover1 {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.5s ease;
@@ -132,12 +132,12 @@
   align-items: center;
 }
 
-.room-hover p {
+.room-hover1 p {
   font-size: 1.3rem;
   text-align: left;
 }
 
-.image1:hover .room-hover {
+.image1:hover .room-hover1 {
   opacity: 1;
   transform: translateY(0);
 }
@@ -147,4 +147,69 @@
   margin-left: 1rem;
   font-weight: 400;
   opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .rooms {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+  }
+
+  .content{
+    padding: 7rem 1rem;
+  }
+
+  .room-caro {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .room-infoo {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: end !important;
+    flex-direction: column;
+    align-items: start !important;
+  }
+
+  .room-icons {
+    align-items: start !important;
+  }
+
+  .room-hover1 {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .rooms {
+    grid-auto-rows: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+  }
+
+  .content{
+    padding: 7rem 1rem;
+  }
+
+  .room-caro {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .room-infoo {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: end !important;
+    flex-direction: column;
+    align-items: start !important;
+  }
+
+  .room-icons {
+    align-items: start !important;
+  }
+
+  .room-hover1 {
+    display: none;
+  }
 }

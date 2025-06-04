@@ -5,7 +5,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-block: 2.2rem;
+  /* padding-block: 2.2rem; */
+  height: 100vh;
   width: 100%;
   position: sticky;
   top: 0;

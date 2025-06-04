@@ -22,7 +22,9 @@ function Nav() {
         scrolled ? "scrolled" : "animate__animated animate__fadeInDown"
       }`}
     >
-      <Link to="/" className="hotel-name" >HotelBeach</Link>
+      <Link to="/" className="hotel-name">
+        HotelBeach
+      </Link>
       {/* <a href="#home" className="hotel-name">
         HotelBeach
       </a> */}
@@ -32,7 +34,7 @@ function Nav() {
         <a href="#restaurant">Restaurant</a>
         <a href="#event">Event</a>
         <a href="#service">Services</a>
-        <a href="#contact">Contact</a>
+        <Link to="/ContactPage">Contact</Link>
       </nav>
       <div
         className={`hamburger ${menuOpen ? "open" : ""}`}
@@ -44,13 +46,31 @@ function Nav() {
       </div>
       {menuOpen && (
         <div className="mobile-menu">
-          <Link to="/" className="hotel-name" >HotelBeach</Link>
-          <Link to="/OurHotel">Our Hotel</Link>
-          <Link to="/RoomsPage">Rooms</Link>
-          <a href="#restaurant">Restaurant</a>
-          <a href="#event">Event</a>
-          <a href="#service">Service</a>
-          <a href="#contact">Contact</a>
+          <Link
+            to="/"
+            className="hotel-name"
+            onClick={() => setMenuOpen(false)}
+          >
+            HotelBeach
+          </Link>
+          <Link to="/OurHotel" onClick={() => setMenuOpen(false)}>
+            Our Hotel
+          </Link>
+          <Link to="/RoomsPage" onClick={() => setMenuOpen(false)}>
+            Rooms
+          </Link>
+          <a href="#restaurant" onClick={() => setMenuOpen(false)}>
+            Restaurant
+          </a>
+          <a href="#event" onClick={() => setMenuOpen(false)}>
+            Event
+          </a>
+          <a href="#service" onClick={() => setMenuOpen(false)}>
+            Service
+          </a>
+          <Link to="/ContactPage" onClick={() => setMenuOpen(false)}>
+            Contact
+          </Link>
         </div>
       )}
     </header>
