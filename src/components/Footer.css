@@ -1,8 +1,12 @@
-.footer-sec{
-    position: relative;
-    z-index: 2;
-    background-color: #fff;
-    height: 80vh;
+.footer-sec {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  min-height: 350px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-sec::before,
@@ -23,4 +27,122 @@
 .footer-sec::after {
   right: 0;
   background-color: #f9fdfe; /* Right side background */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 350px;
+  width: 100%;
+}
+
+.footer-nav-col {
+  background: #f9f0e5;
+  padding: 3.5rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+}
+
+.footer-nav-group {
+  margin-bottom: 2.5rem;
+}
+
+.footer-label {
+  font-size: 1rem;
+  color: #b0b0b0;
+  text-transform: none;
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-list li {
+  margin-bottom: 1rem;
+}
+
+.footer-nav-list a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.footer-nav-list a:hover {
+  color: #c5a46d;
+}
+
+.footer-brand {
+  font-family: "Zodiak", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  margin-top: 2rem;
+  letter-spacing: -1px;
+}
+
+.footer-info-col {
+  background: #fff;
+  padding: 3.5rem 3rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 350px;
+}
+
+.footer-info-group {
+  margin-bottom: 2.2rem;
+}
+
+.footer-info-main {
+  color: #222;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+  margin-top: 0.2rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: auto;
+  font-size: 1rem;
+}
+
+.footer-social {
+  color: #222;
+  text-decoration: none;
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+.footer-social:hover {
+  color: #c5a46d;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-nav-col,
+  .footer-info-col {
+    padding: 2rem 1.2rem;
+    min-height: unset;
+  }
+  .footer-brand {
+    margin-top: 1.5rem;
+  }
+  .footer-socials {
+    margin-top: 2rem;
+  }
 }

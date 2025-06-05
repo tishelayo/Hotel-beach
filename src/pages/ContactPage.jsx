@@ -111,93 +111,98 @@ function ContactPage() {
             <div className="contact-info-text">(603) 555-0123</div>
           </div>
         </div>
+        <div className="line"></div>
       </div>
 
       <div className="conto">
         <div className="background">
-          <div>
-            <img src={BG1} alt="img-bg" />
+          <div className="dev">
+            <img src={BG1} alt="img-bg1" className="img-bg" />
           </div>
-          <form className="contact-form" onSubmit={handleSubmit} noValidate>
-            <h2 className="form-title">Request Info</h2>
-            <p className="form-desc">
-              Have a question, comment, or need assistance? We're here to help!
-              Reach out to us using the contact information below.
-            </p>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Jane Smith"
-                value={form.name}
-                onChange={handleChange}
-                className={errors.name ? "error" : ""}
-                autoComplete="off"
-              />
-              {errors.name && <span className="form-error">{errors.name}</span>}
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="jane@framer.com"
-                value={form.email}
-                onChange={handleChange}
-                className={errors.email ? "error" : ""}
-                autoComplete="off"
-              />
-              {errors.email && (
-                <span className="form-error">{errors.email}</span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="subject">Subject</label>
-              <select
-                id="subject"
-                name="subject"
-                value={form.subject}
-                onChange={handleChange}
-                className={errors.subject ? "error" : ""}
-              >
-                <option value="">Select...</option>
-                {subjects.map((s) => (
-                  <option key={s} value={s}>
-                    {s}
-                  </option>
-                ))}
-              </select>
-              {errors.subject && (
-                <span className="form-error">{errors.subject}</span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Your message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Enter your message here..."
-                value={form.message}
-                onChange={handleChange}
-                className={errors.message ? "error" : ""}
-                rows={5}
-              />
-              {errors.message && (
-                <span className="form-error">{errors.message}</span>
-              )}
-            </div>
-            <button type="submit" className="submit-btn">
-              Submit
-            </button>
-            {submitted && (
-              <div className="form-success">
-                Thank you! Your message has been sent.
+          <div className="contact-form-section">
+            <form className="contact-form" onSubmit={handleSubmit} noValidate>
+              <h2 className="form-title">Request Info</h2>
+              <p className="form-desc">
+                Have a question, comment, or need assistance? We're here to
+                help! Reach out to us using the contact information below.
+              </p>
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jane Smith"
+                  value={form.name}
+                  onChange={handleChange}
+                  className={errors.name ? "error" : ""}
+                  autoComplete="off"
+                />
+                {errors.name && (
+                  <span className="form-error">{errors.name}</span>
+                )}
               </div>
-            )}
-          </form>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jane@framer.com"
+                  value={form.email}
+                  onChange={handleChange}
+                  className={errors.email ? "error" : ""}
+                  autoComplete="off"
+                />
+                {errors.email && (
+                  <span className="form-error">{errors.email}</span>
+                )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="subject">Subject</label>
+                <select
+                  id="subject"
+                  name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
+                  className={errors.subject ? "error" : ""}
+                >
+                  <option value="">Select...</option>
+                  {subjects.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
+                {errors.subject && (
+                  <span className="form-error">{errors.subject}</span>
+                )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Your message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Enter your message here..."
+                  value={form.message}
+                  onChange={handleChange}
+                  className={errors.message ? "error" : ""}
+                  rows={5}
+                />
+                {errors.message && (
+                  <span className="form-error">{errors.message}</span>
+                )}
+              </div>
+              <button type="submit" className="submit-btn">
+                Submit
+              </button>
+              {submitted && (
+                <div className="form-success">
+                  Thank you! Your message has been sent.
+                </div>
+              )}
+            </form>
+          </div>
         </div>
       </div>
     </section>
