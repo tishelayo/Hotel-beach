@@ -159,6 +159,7 @@
 
   .img-bg {
     width: 80%;
+    height: 90% !important;
   }
 
   .img-foreground {

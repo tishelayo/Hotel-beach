@@ -56,16 +56,22 @@ function Footer() {
               <br />
               California 62639
             </div>
+            <div className="footer-copy">
+              <p>© 2025 Alatishe. All rights reserved.</p>
+            </div>
           </div>
           <div className="footer-socials">
             <a href="#" className="footer-social">
               X
             </a>
             <a href="#" className="footer-social">
-              Instagram
+              <i class="fa-brands fa-instagram"></i>
             </a>
             <a href="#" className="footer-social">
-              Facebook
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#" className="footer-social">
+              <i class="fa-brands fa-instagram"></i>
             </a>
           </div>
         </div>
